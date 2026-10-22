@@ -1,0 +1,815 @@
+
+/* ==========================================
+   TASKFLOW - PREMIUM DARK CODER UI
+   Complete CSS Stylesheet
+========================================== */
+
+/* 1. GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #050816;
+    --background-light: #0a1226;
+    --card: #0b162b;
+    --card-hover: #0f2039;
+    --cyan: #00e5ff;
+    --blue: #168cff;
+    --purple: #8b5cf6;
+    --green: #00f5b0;
+    --white: #f0f6ff;
+    --text: #d6e6fa;
+    --muted: #8da6c5;
+    --border: #19395d;
+    --danger: #ff4f87;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background:
+        radial-gradient(
+            circle at 10% 5%,
+            #10244a 0,
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 95% 30%,
+            #211344 0,
+            transparent 28%
+        ),
+        var(--background);
+}
+
+/* 2. NAVIGATION BAR */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 17px 5%;
+    background: rgba(5, 11, 25, 0.94);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+}
+
+.logo {
+    color: var(--cyan);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+    white-space: nowrap;
+    text-shadow: 0 0 18px #00e5ff22;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+nav a {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--cyan);
+    text-shadow: 0 0 12px #00e5ff55;
+}
+
+/* 3. HERO / INTRO SECTION */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 68px 20px 48px;
+    text-align: center;
+    background:
+        linear-gradient(
+            120deg,
+            transparent 45%,
+            #301b5930
+        ),
+        radial-gradient(
+            ellipse at center,
+            #102343 0,
+            transparent 75%
+        );
+    border-bottom: 1px solid #15304d;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 12px 0 18px;
+    color: var(--white);
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero > p:last-child {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* 4. MAIN DASHBOARD GRID */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+    padding: 32px 4%;
+}
+
+.card {
+    min-width: 0;
+    padding: 24px;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        #0d1c33,
+        #071122
+    );
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: 0 10px 32px #00000020;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.card:hover {
+    border-color: #1673a4;
+    box-shadow: 0 0 25px #00c8ff10;
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.card > .muted {
+    margin-bottom: 20px;
+}
+
+/* 5. INPUTS AND TEXTAREA */
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 7px 0 16px;
+    padding: 12px 13px;
+    color: var(--white);
+    background: #071326;
+    border: 1px solid #244568;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #7792b2;
+    opacity: 1;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px #00e5ff17;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* 6. BUTTON DESIGN */
+
+button {
+    padding: 12px 17px;
+    color: #ffffff;
+    background: linear-gradient(
+        110deg,
+        #087ff5,
+        #5948f5,
+        #8b45ed
+    );
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        filter 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+button:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 0 18px #5965ff30;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+/* 7. TASK PROGRESS BAR */
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.progress-track {
+    flex: 1;
+    height: 9px;
+    overflow: hidden;
+    background: #182c48;
+    border-radius: 20px;
+}
+
+#progressBar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--cyan),
+        var(--blue)
+    );
+    border-radius: inherit;
+    box-shadow: 0 0 12px #00e5ff44;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* 8. ADD TASK FORM */
+
+.task-input {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.task-input input {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+.task-input button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* 9. TASK LIST ITEMS */
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #19314c;
+    overflow-wrap: anywhere;
+}
+
+.task-item .task-name {
+    flex: 1;
+    min-width: 0;
+    color: #c9def4;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.task-item.done .task-name {
+    color: #718ba8;
+    text-decoration: line-through;
+}
+
+.task-item input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+.delete-button {
+    flex-shrink: 0;
+    padding: 5px 9px;
+    color: var(--danger);
+    background: #29172d;
+    border: 1px solid #65324f;
+    border-radius: 7px;
+    font-size: 12px;
+    box-shadow: none;
+}
+
+.delete-button:hover {
+    color: #ffffff;
+    background: #a52c59;
+    box-shadow: 0 0 12px #ff4f8720;
+}
+
+/* 10. IMAGE GALLERY */
+
+.image-input {
+    margin-bottom: 15px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.image-grid img {
+    display: block;
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    background: #0c1e36;
+    border: 1px solid #244d70;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.035);
+    border-color: var(--cyan);
+    box-shadow: 0 0 16px #00e5ff20;
+}
+
+.hint {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* 11. CONTACT FORM */
+
+label {
+    display: block;
+    margin-top: 8px;
+    color: #dcecff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+#formStatus {
+    margin-top: 12px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* 12. IMAGE LIGHTBOX */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: rgba(2, 6, 18, 0.95);
+    backdrop-filter: blur(12px);
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    background: #0b162b;
+    border: 1px solid #245b83;
+    border-radius: 12px;
+    box-shadow: 0 0 35px #00c8ff20;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    padding: 8px 14px;
+    color: var(--cyan);
+    background: #102039;
+    border: 1px solid #245276;
+    font-size: 20px;
+}
+
+/* 13. FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 23px 5%;
+    color: var(--muted);
+    background: #060d1b;
+    border-top: 1px solid #183553;
+    font-size: 13px;
+}
+
+/* 14. TABLET RESPONSIVENESS */
+
+@media (max-width: 1050px) {
+    .dashboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #contact {
+        grid-column: 1 / -1;
+    }
+}
+
+/* 15. MOBILE RESPONSIVENESS */
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 4%;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 45px 18px 35px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        letter-spacing: -1px;
+    }
+
+    .hero > p:last-child {
+        font-size: 14px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .dashboard {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+        padding: 20px 14px;
+    }
+
+    #contact {
+        grid-column: auto;
+    }
+
+    .card {
+        padding: 19px;
+        border-radius: 14px;
+    }
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+    .task-input {
+        flex-wrap: wrap;
+    }
+
+    .task-input input {
+        flex-basis: 100%;
+    }
+
+    .image-grid img {
+        height: 125px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    .close-button {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+/* 16. EXTRA SMALL SCREENS */
+
+@media (max-width: 360px) {
+    .progress-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .progress-track {
+        width: 100%;
+        flex: auto;
+    }
+
+    .task-item {
+        gap: 7px;
+    }
+
+    .delete-button {
+        padding: 5px 7px;
+    }
+
+    .image-grid {
+        gap: 7px;
+    }
+
+    .image-grid img {
+        height: 105px;
+    }
+}
+
+/* 17. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+/* Full screen layout fix */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 30px 5%;
+}
+
+.navbar {
+    width: 100%;
+    margin: 0;
+    padding: 20px 5%;
+}
+
+.hero {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 30px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: none;
+    gap: 24px;
+    margin: 0 0 24px;
+}
+
+.card {
+    width: 100%;
+    min-width: 0;
+}
+
+footer {
+    width: 100%;
+    margin: 0;
+    padding: 24px 5%;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    main {
+        padding: 20px 16px;
+    }
+
+    .navbar {
+        padding: 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+/* ===== IMAGE GALLERY CONFIGURATION ===== */
+
+#gallery {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#gallery .image-input {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#gallery .image-input input {
+    flex: 1;
+    min-width: 0;
+}
+
+#gallery .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    margin-top: 22px;
+}
+
+#gallery .image-grid img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#gallery .image-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 200, 255, 0.18);
+}
+
+#gallery .hint {
+    margin-top: 16px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    #gallery .image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #gallery .image-grid img {
+        height: 200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+    #gallery .image-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    #gallery .image-grid img {
+        height: 230px;
+    }
+
+    #gallery .image-input {
+        flex-direction: column;
+    }
+
+    #gallery .image-input button {
+        width: 100%;
+    }
+}
+

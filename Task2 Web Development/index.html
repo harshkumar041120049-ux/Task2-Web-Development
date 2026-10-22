@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Smart Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="#" class="logo">✓ TaskFlow</a>
+        <nav>
+            <a href="#tasks">Tasks</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <p class="eyebrow">YOUR PERSONAL PRODUCTIVITY SPACE</p>
+            <h1>Organize your day,<br><span>your way.</span></h1>
+            <p>
+                Manage your tasks, explore beautiful images
+                and get in touch — all in one place.
+            </p>
+        </section>
+
+        <!-- 1. TO-DO LIST -->
+        <section class="dashboard">
+            <article class="card" id="tasks">
+                <h2>✓ To-Do List</h2>
+                <p class="muted">
+                    Add tasks, complete them or remove them.
+                </p>
+
+                <div class="progress-info">
+                    <div class="progress-track">
+                        <div id="progressBar"></div>
+                    </div>
+                    <small id="progressText">0 completed</small>
+                </div>
+
+                <form id="taskForm" class="task-input">
+                    <input
+                        id="taskInput"
+                        type="text"
+                        placeholder="Add a new task..."
+                        required
+                    >
+                    <button type="submit">Add Task +</button>
+                </form>
+
+                <ul id="taskList" class="task-list"></ul>
+            </article>
+        </section>
+
+        <!-- 2. IMAGE GALLERY -->
+        <section class="dashboard">
+            <article class="card" id="gallery">
+                <h2>▧ Image Gallery</h2>
+                <p class="muted">
+                    Click an image to view it larger.
+                </p>
+
+                <form id="imageForm" class="image-input">
+                    <input
+                        id="imageUrl"
+                        type="url"
+                        placeholder="Paste an image URL"
+                        required
+                    >
+                    <button type="submit">Add Image</button>
+                </form>
+
+                <div id="imageGrid" class="image-grid">
+                    <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500"
+                        alt="Beautiful landscape"
+                    >
+                    <img
+                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500"
+                        alt="Ocean beach"
+                    >
+                    <img
+                        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500"
+                        alt="Sunrise scenery"
+                        
+                    class="gallery">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Coding Setup">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Nature">
+    <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600" alt="City">
+    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600" alt="Abstract Art">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Mountain">
+    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=600" alt="Ocean">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600" alt="Forest">
+    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600" alt="Flowers">
+    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600" alt="Architecture">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600" alt="Workspace"
+</div>
+
+                        
+
+                    >
+                </div>
+
+                <p class="hint">
+                    Tip: Use a direct image URL ending in .jpg, .png or .webp.
+                </p>
+            </article>
+        </section>
+
+        <!-- 3. CONTACT US -->
+        <section class="dashboard">
+            <article class="card" id="contact">
+                <h2>✉ Contact Us</h2>
+                <p class="muted">
+                    Have a question? Send us a message.
+                </p>
+
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input
+                        id="name"
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <label for="email">Email</label>
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="subject">Subject</label>
+                    <input
+                        id="subject"
+                        type="text"
+                        placeholder="Enter subject"
+                        required
+                    >
+
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        rows="4"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                    <button type="submit" class="full-button">
+                        Send Message →
+                    </button>
+
+                    <p id="formStatus" role="status"></p>
+                </form>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- IMAGE LIGHTBOX -->
+    <div
+        id="lightbox"
+        class="lightbox"
+        role="dialog"
+        aria-label="Enlarged image"
+        aria-modal="true"
+        hidden
+    >
+        <button
+            id="closeLightbox"
+            class="close-button"
+            type="button"
+            aria-label="Close image"
+        >✕</button>
+
+        <img id="largeImage" src="" alt="Enlarged gallery image">
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 TaskFlow — Smart Task Manager</p>
+        <p>Designed with care · Keep Growing ✦</p>
+    </footer>
+
+</body>
+</html>
+
